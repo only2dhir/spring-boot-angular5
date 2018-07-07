@@ -5,9 +5,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping({"/api"})
+//@RequestMapping({"/api"})
+@RequestMapping({"/users"})
 public class UserController {
 
     @Autowired
@@ -23,8 +24,9 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @PutMapping
-    public User update(@RequestBody User user){
+    @PutMapping(path = {"/{id}"})
+    public User update(@PathVariable("id") int id, @RequestBody User user){
+        user.setId(id);
         return userService.update(user);
     }
 

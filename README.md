@@ -12,3 +12,5 @@ This project uses following versions:
 1. Spring Boot v1.5.9
 2. Angular v5.0.0
 3. Maven
+
+Angular 8 just got released this May and here is the article for [Angular 8 CRUD example](https://www.devglan.com/angular/angular-8-crud-example).
